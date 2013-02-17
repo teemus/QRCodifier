@@ -7,34 +7,66 @@
     border-bottom:1px dotted #bbb;
 }
 .tagline {
-    text-align:center;
+    font-size:60%;
+	vertical-align:text-top;
+}
+.three-steps {
+	text-align:center;
+	padding:10px;
+}
+.description {
+	padding:10px;
+	border:1px solid #ddd;
+	background-color:#D0E69C;
+}
+.screenshot {
+	text-align:center;
+}
+.screenshot img {
+	padding:2px;
+	border:1px solid #bbb;
+}
+.like-button-container {
+	text-align:center;
+}
+.like-button {
+	border:none;
+	overflow:hidden;
+	height:80px;
 }
 .footer {
     font-size:80%;
-    padding:5px;
-    border-top:1px solid #bbb;
+    padding:10px;
 }
 </style>
-<title>QRCodifier</title>
+<title>QRCodifier [Transfer links from browser to smartphone using QR codes!]</title>
 </head>
 <body>
-<h1 class="header">QRCodifier</h1>
-<h2 class="tagline">Bookmark &raquo; Click &raquo; Scan!</h2>
-<p>Ever ran into this classic problem? The weather's good, the sun is shining (or not) and you are surfing the interwebs. You stumble upon something, and need to transfer the URL of that website onto your smartphone?</p>
+<h1 class="header">QRCodifier <span class="tagline">[Transfer links from browser to smartphone using QR codes!]</span></h1>
+<h2 class="three-steps">Bookmark &raquo; Click &raquo; Scan!</h2>
+
+<div class="like-button-container">
+<iframe class="like-button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsumeet.info%2FQRCodifier%2F&amp;layout=standard&amp;show_faces=true&amp;width=400&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+</div>
+
+<p class="description">Ever ran into this classic problem? The weather's good, the sun is shining (or not) and you are surfing the interwebs. You stumble upon something, and need to transfer the URL of that website onto your smartphone?</p>
 
 <p>Well, <strong>QRCodifier</strong> is here to help you! It is bookmarklet written in JavaScript and is super-easy to use.</p>
 
 <ol>
 <li>Drag this <a href='javascript:(function(){if (document.getElementById("QRCodifier") !== null) {    alert("Once should be good enough. ;)"); return; }    var qrCode = document.createElement("img");    qrCode.src = "http://chart.apis.google.com/chart?cht=qr&chs=220x220&chld=L&choe=UTF-8&chl=" + encodeURIComponent(document.location.href);    qrCode.setAttribute("style","margin:7px 0px 0px 0px;display:inline;");    var qrText = document.createElement("p");    qrText.setAttribute("style", "text-align:center;");    qrText.innerHTML = "Click to close";    qrCode.setAttribute("title", "QR code for this website - Scan it with your smartphone now!");    var qrCodeDiv = document.createElement("div");    qrCodeDiv.appendChild(qrCode);    qrCodeDiv.appendChild(qrText);    qrCodeDiv.setAttribute("id", "QRCodifier");    var top = Math.max(window.innerHeight/2 - 130 + window.scrollY, 0);    var left = Math.max(window.innerWidth/2 - 130, 0);    qrCodeDiv.setAttribute("onclick", "javascript:document.getElementById(\"QRCodifier\").parentNode.removeChild(document.getElementById(\"QRCodifier\"))");    qrCodeDiv.setAttribute("style", "background-color:#000;color:#fff;text-align:center;margin:0px;padding:0px;width:260px;height:260px;border:4px solid #e00;z-index:5000;position:absolute;top:" + top + "px;" + "left:" + left + "px;");    var dBody = document.getElementsByTagName("body");    dBody[0].insertBefore(qrCodeDiv, dBody[0].childNodes[0]);    setTimeout(function(){ document.getElementById("QRCodifier").style.border="4px solid #000"; }, 550);    })();'>QRCodifier</a> bookmarklet onto the <strong>Bookmarks</strong> toolbar of your browser.</li>
-<li>Visit any website, say, <a href="http://soundcloud.com/teemus">http://soundclound.com/teemus</a> or <a href="http://store.apple.com/us/browse/home/shop_iphone">http://store.apple.com/us/browse/home/shop_iphone</a>.</li>
-<li>Click on the QRCodifier bookmarklet that you just added.</li>
+<li>Visit any website, say, <a href="http://soundcloud.com/teemus">http://soundclound.com/teemus</a>, <a href="http://www.amazon.com/dp/B004A95HDW/">http://www.amazon.com/dp/B004A95HDW/</a> or <a href="http://store.apple.com/us/browse/home/shop_iphone">http://store.apple.com/us/browse/home/shop_iphone</a> for that matter.</li>
+<li><strong>Click</strong> on the <em>QRCodifier</em> bookmarklet that you just added.</li>
 <li>Voila! The QR code for the website appears on the center of your screen.</li>
-<li>Scan the QR code with an app such as <a href="http://scan.me/">Scan</a> or <a href="http://www.redlaser.com/">RedLaser</a> using your smartphone.</li>
+<li><strong>Scan</strong> the QR code with an app such as <a href="http://scan.me/">Scan</a> or <a href="http://www.redlaser.com/">RedLaser</a> using your smartphone.</li>
 <li>Boom. Open the same website on your smartphone's browser!</li>
 </ol>
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsumeet.info%2FQRCodifier%2F&amp;layout=standard&amp;show_faces=true&amp;width=400&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:400px; height:80px; float:right; margin-top:10px;" allowTransparency="true"></iframe>
+<p class="screenshot">Here's a screenshot of <em>QRCodifier</em>.</p>
+<div class="screenshot">
+	<img alt="Screenshot: QRCodifier" src="QRCodifier.png" width="750" height="442"/>
+</div>
 <div class="footer">
-2013-02-16 | <strong>QRCodifier</strong> has been developed by <a href="http://sumeet.info/">Sumeet Mulani</a> and uses <a href="https://google-developers.appspot.com/chart/infographics/docs/overview">Google's Infographics API</a>. 
+2013-02-16 | <em>QRCodifier</em> has been developed by <a href="http://sumeet.info/">Sumeet Mulani</a> and uses <a href="https://google-developers.appspot.com/chart/infographics/docs/overview">Google's Infographics API</a>. 
 </div>
 </body>
 </html>
